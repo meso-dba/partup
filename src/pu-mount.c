@@ -137,6 +137,7 @@ pu_umount(const gchar *mount_point,
     g_return_val_if_fail(g_strcmp0(mount_point, "") > 0, FALSE);
     g_return_val_if_fail(error == NULL || *error == NULL, FALSE);
 
+    system("sync");
     g_debug("Unmounting %s", mount_point);
 
     ctx = mnt_new_context();
